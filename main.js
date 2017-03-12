@@ -41,6 +41,7 @@ Task #2
 // Dog - superclass
 function Dog() {
   this.hungry = true;
+
 }
 
 // superclass method
@@ -59,8 +60,11 @@ function Husky() {
 
 // TODO: Use Object.create() in order to extend the superclass with the subclass
 //write code here
-let husky = Object.create(Dog);
+Husky.prototype = Object.create(Dog.prototype);
+Husky.prototype.constructor = Husky;
+
 var fido = new Husky();
+
 
 console.log('Is fido an instance of Husky?', fido instanceof Husky);// should print true
 console.log('Is fido an instance of Dog?', fido instanceof Dog);// should print true
